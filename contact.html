@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sekoma Energy Limited</title>
+    <meta name="description"
+        content="Get in touch with Sekoma Energy Limited for quotes, inquiries, and energy solutions in Zambia.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sekomaGreen: '#2e7d32',
+                        sekomaGreenLight: '#4CAF50',
+                        sekomaYellow: '#F9A825',
+                        sekomaDark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .input-focus:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Sekoma Energy Limited" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold">
+                <a href="index.html#about" class="hover:text-sekomaGreen transition">About</a>
+                <a href="index.html#services" class="hover:text-sekomaGreen transition">Services</a>
+                <a href="products.html" class="hover:text-sekomaGreen transition">Products</a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Contact Us</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-700 text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 pb-4 flex flex-col space-y-3 font-semibold">
+            <a href="index.html#about" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">About</a>
+            <a href="index.html#services" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">Services</a>
+            <a href="products.html" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">Products</a>
+            <a href="contact.html"
+                class="bg-sekomaGreen text-white px-5 py-2 rounded-lg text-center hover:bg-green-700 transition">Contact
+                Us</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="bg-sekomaDark text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <span
+                class="inline-block bg-sekomaGreen text-white text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">
+                <i class="fas fa-envelope-open-text mr-1"></i> Let's Talk
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Contact Sekoma Energy</h1>
+            <p class="text-gray-300 max-w-xl mx-auto text-lg">Send us a message and our team will get back to you within
+                24 hours.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Contact Info Sidebar -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-extrabold mb-6">Our Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-5">
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl text-sekomaGreen"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">Office Address</p>
+                                    <p class="text-gray-600">Plot 7330, Mukatasha Road<br>Lusaka, Zambia</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-xl text-sekomaGreen"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">Phone</p>
+                                    <a href="tel:+260966505070" class="text-sekomaGreen hover:underline">+260 966
+                                        505070</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl text-sekomaGreen"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">Email</p>
+                                    <a href="mailto:sales@sekomaenergy.com"
+                                        class="text-sekomaGreen hover:underline">sales@sekomaenergy.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-xl text-sekomaGreen"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800">Business Hours</p>
+                                    <p class="text-gray-600">Mon – Fri: 08:00 – 17:00 CAT<br>Sat: 08:00 – 12:00 CAT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div>
+                        <p class="font-bold text-gray-800 mb-4">Follow Us</p>
+                        <div class="flex gap-4">
+                            <a href="#" aria-label="Facebook"
+                                class="w-12 h-12 bg-sekomaDark text-white rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn"
+                                class="w-12 h-12 bg-sekomaDark text-white rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- What to expect -->
+                    <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+                        <h3 class="font-bold text-sekomaGreen mb-4"><i class="fas fa-info-circle mr-2"></i>What to
+                            Expect</h3>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-sekomaGreen"></i> Response
+                                within 24 business hours</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-sekomaGreen"></i>
+                                No-obligation quote</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-sekomaGreen"></i> Tailored
+                                energy solution proposal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border">
+                    <h2 class="text-2xl font-extrabold mb-2">Send Us a Message</h2>
+                    <p class="text-gray-500 mb-8 text-sm">All fields marked with * are required.</p>
+
+                    <!-- Success / Error messages (shown via JS) -->
+                    <div id="formSuccess"
+                        class="hidden bg-green-50 border border-green-300 text-green-800 rounded-xl p-4 mb-6 flex items-center gap-3">
+                        <i class="fas fa-check-circle text-xl"></i>
+                        <span>Thank you! Your message has been sent. We'll be in touch soon.</span>
+                    </div>
+                    <div id="formError"
+                        class="hidden bg-red-50 border border-red-300 text-red-800 rounded-xl p-4 mb-6 flex items-center gap-3">
+                        <i class="fas fa-exclamation-circle text-xl"></i>
+                        <span>Something went wrong. Please try again or email us directly.</span>
+                    </div>
+
+                    <form id="contactForm" action="contact.php" method="POST" class="space-y-5" novalidate>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold mb-2 text-gray-700">Full Name
+                                    *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Banda"
+                                    class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm transition">
+                            </div>
+                            <div>
+                                <label for="company"
+                                    class="block text-sm font-semibold mb-2 text-gray-700">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Acme Mining Ltd"
+                                    class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold mb-2 text-gray-700">Email Address
+                                *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com"
+                                class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700">Phone
+                                Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+260 97X XXX XXX"
+                                class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm transition">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-semibold mb-2 text-gray-700">Service of
+                                Interest</label>
+                            <select id="service" name="service"
+                                class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm bg-white transition">
+                                <option value="">— Select a service —</option>
+                                <option value="Lubricant Distribution">Lubricant Distribution</option>
+                                <option value="White Products (Fuel)">White Products (Fuel)</option>
+                                <option value="Power Back-Up / Generators">Power Back-Up / Generators</option>
+                                <option value="Equipment Maintenance">Equipment Maintenance</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold mb-2 text-gray-700">Message
+                                *</label>
+                            <textarea id="message" name="message" required rows="5"
+                                placeholder="Tell us about your requirements..."
+                                class="input-focus w-full border border-gray-300 rounded-xl px-4 py-3 text-sm transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-sekomaGreen text-white font-bold py-4 rounded-xl hover:bg-green-700 transition flex items-center justify-center gap-3 text-base">
+                            <i class="fas fa-paper-plane"></i>
+                            <span id="btnText">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sekomaDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="mb-4">
+                    <img src="logo-transparent.png" alt="Sekoma Energy Limited" class="h-10 w-auto">
+                </div>
+                <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
+                <div class="flex gap-4 mt-5">
+                    <a href="#" aria-label="Facebook"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-5 text-white">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="index.html#about" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
+                    <li><a href="index.html#services" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                    <li><a href="products.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Products</a></li>
+                    <li><a href="contact.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-5 text-white">Get In Touch</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1"></i>
+                        <span>Plot 7330, Mukatasha Road, Lusaka, Zambia</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone text-sekomaGreenLight"></i>
+                        <a href="tel:+260966505070" class="hover:text-white transition">+260 966 505070</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-sekomaGreenLight"></i>
+                        <a href="mailto:sales@sekomaenergy.com"
+                            class="hover:text-white transition">sales@sekomaenergy.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2026 Sekoma Energy Limited. Registered in Zambia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars' : 'fas fa-times';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.className = 'fas fa-bars';
+        }
+
+        // AJAX form submission
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const successMsg = document.getElementById('formSuccess');
+        const errorMsg = document.getElementById('formError');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Basic client-side validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                errorMsg.querySelector('span').textContent = 'Please fill in all required fields.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            // Loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending…';
+            submitBtn.querySelector('i').className = 'fas fa-spinner fa-spin';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('contact.php', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    successMsg.classList.remove('hidden');
+                    form.reset();
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch {
+                errorMsg.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = 'Send Message';
+                submitBtn.querySelector('i').className = 'fas fa-paper-plane';
+            }
+        });
+    </script>
+</body>
+
+</html>

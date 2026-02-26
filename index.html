@@ -1,136 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sekoma Energy Limited | 360-Turnkey Energy Solutions</title>
+    <meta name="description"
+        content="Sekoma Energy Limited offers 360-Turnkey energy solutions in Zambia — lubricants, white fuel products, power back-up, and industrial services.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        sekomaGreen: '#4CAF50',
-                        sekomaYellow: '#FFEB3B',
-                        sekomaDark: '#1a1a1a',
+                        sekomaGreen: '#2e7d32',
+                        sekomaGreenLight: '#4CAF50',
+                        sekomaYellow: '#F9A825',
+                        sekomaDark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(17, 40, 12, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
 
+    <!-- NAVIGATION -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-sekomaGreen flex items-center">
-                <i class="fas fa-bolt mr-2"></i> SEKOMA ENERGY
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Sekoma Energy Limited" class="h-12 w-auto">
+            </a>
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-8 font-semibold">
                 <a href="#about" class="hover:text-sekomaGreen transition">About</a>
                 <a href="#services" class="hover:text-sekomaGreen transition">Services</a>
-                <a href="#products" class="hover:text-sekomaGreen transition">Products</a>
-                <a href="#contact" class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-600 transition">Contact Us</a>
+                <a href="products.html" class="hover:text-sekomaGreen transition">Products</a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Contact Us</a>
             </div>
+            <!-- Mobile hamburger -->
+            <button id="menuBtn" class="md:hidden text-gray-700 text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+        <!-- Mobile dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 pb-4 flex flex-col space-y-3 font-semibold">
+            <a href="#about" class="hover:text-sekomaGreen transition py-2" onclick="closeMobileMenu()">About</a>
+            <a href="#services" class="hover:text-sekomaGreen transition py-2" onclick="closeMobileMenu()">Services</a>
+            <a href="products.html" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">Products</a>
+            <a href="contact.html"
+                class="bg-sekomaGreen text-white px-5 py-2 rounded-lg text-center hover:bg-green-700 transition"
+                onclick="closeMobileMenu()">Contact Us</a>
         </div>
     </nav>
 
-    <header class="hero-gradient h-[80vh] flex items-center text-white">
-        <div class="container mx-auto px-6 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">360-Turnkey Energy Solutions</h1>
-            [cite_start]<p class="text-xl md:text-2xl mb-8 max-w-2xl">From sourcing to financing, storing and transporting — we bridge the gaps in the petroleum value chain[cite: 10, 32].</p>
-            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#services" class="bg-sekomaYellow text-sekomaDark px-8 py-3 rounded-md font-bold text-center">Our Services</a>
-                <a href="#contact" class="border-2 border-white px-8 py-3 rounded-md font-bold text-center hover:bg-white hover:text-sekomaDark transition">Request a Quote</a>
+    <!-- HERO -->
+    <header class="hero-gradient min-h-[85vh] flex items-center text-white">
+        <div class="container mx-auto px-6 py-20 text-center md:text-left">
+            <span
+                class="inline-block bg-sekomaYellow text-sekomaDark text-sm font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">
+                <i class="fas fa-leaf mr-1"></i> Zambia's Energy Partner
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                360-Turnkey<br>Energy Solutions
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl text-gray-200">
+                From sourcing to financing, storing and transporting — we bridge the gaps in the petroleum value chain.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#services"
+                    class="bg-sekomaYellow text-sekomaDark px-8 py-3 rounded-lg font-bold text-center hover:brightness-110 transition">
+                    <i class="fas fa-arrow-right mr-2"></i>Our Services
+                </a>
+                <a href="contact.html"
+                    class="border-2 border-white px-8 py-3 rounded-lg font-bold text-center hover:bg-white hover:text-sekomaDark transition">
+                    <i class="fas fa-envelope mr-2"></i>Request a Quote
+                </a>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-20 bg-white">
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">Primary Areas of Interest</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <i class="fas fa-oil-can text-4xl text-sekomaGreen mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Lubricant Distribution</h3>
-                    [cite_start]<p class="text-gray-600">Supply and distribution of high-quality greases, oils, and penetrating lubricants[cite: 16, 17, 18].</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-sekomaGreenLight font-semibold uppercase text-sm tracking-widest">Who We
+                        Are</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-6">Built for Zambia's<br>Growing Economy</h2>
+                    <p class="text-gray-600 mb-4">Sekoma Energy Limited is a Zambian energy company offering integrated
+                        petroleum and power solutions. We serve mining, construction, agriculture, and transport sectors
+                        with reliable supply chains and technical expertise.</p>
+                    <p class="text-gray-600">Headquartered in Lusaka, we bring world-class products and services to the
+                        local market — on time, every time.</p>
                 </div>
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <i class="fas fa-gas-pump text-4xl text-sekomaGreen mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">White Products</h3>
-                    [cite_start]<p class="text-gray-600">Reliable supply of Diesel, Petrol, and Heavy Fuel Oils (HFO) sourced directly from refineries[cite: 19, 113, 114].</p>
-                </div>
-                <div class="p-8 border rounded-xl hover:shadow-xl transition">
-                    <i class="fas fa-plug text-4xl text-sekomaGreen mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Power Back-Up</h3>
-                    [cite_start]<p class="text-gray-600">World-class Perkins and Cummins generators for home and industrial use[cite: 13, 118, 119].</p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-green-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-handshake text-3xl text-sekomaGreen mb-3"></i>
+                        <p class="font-bold text-sm">Integrity &amp; Credibility</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-lightbulb text-3xl text-sekomaYellow mb-3"></i>
+                        <p class="font-bold text-sm">Agility &amp; Innovation</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-star text-3xl text-sekomaGreen mb-3"></i>
+                        <p class="font-bold text-sm">Excellence &amp; Efficiency</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-xl text-center">
+                        <i class="fas fa-leaf text-3xl text-sekomaYellow mb-3"></i>
+                        <p class="font-bold text-sm">Green Agenda</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-20 bg-gray-100">
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold">Industries We Serve</h2>
-                    [cite_start]<p class="text-gray-600 mt-2">Tailored solutions for Zambia's growing economy[cite: 9, 28].</p>
+            <div class="text-center mb-14">
+                <span class="text-sekomaGreenLight font-semibold uppercase text-sm tracking-widest">What We Do</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-2">Primary Areas of Interest</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 border-t-4 border-sekomaGreen rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-oil-can text-2xl text-sekomaGreen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lubricant Distribution</h3>
+                    <p class="text-gray-600">Supply and distribution of high-quality greases, industrial oils, and
+                        penetrating lubricants for all sectors.</p>
+                    <a href="products.html"
+                        class="inline-flex items-center mt-5 text-sekomaGreen font-semibold hover:underline">
+                        View Products <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
                 </div>
+                <div class="bg-white p-8 border-t-4 border-sekomaYellow rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-gas-pump text-2xl text-sekomaYellow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">White Products</h3>
+                    <p class="text-gray-600">Reliable supply of Diesel, Petrol, and Heavy Fuel Oils (HFO) sourced
+                        directly from refineries.</p>
+                    <a href="contact.html"
+                        class="inline-flex items-center mt-5 text-sekomaYellow font-semibold hover:underline">
+                        Get a Quote <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 border-t-4 border-sekomaGreen rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-plug text-2xl text-sekomaGreen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Power Back-Up</h3>
+                    <p class="text-gray-600">World-class Perkins and Cummins generators for home and industrial use —
+                        supply and maintenance.</p>
+                    <a href="products.html"
+                        class="inline-flex items-center mt-5 text-sekomaGreen font-semibold hover:underline">
+                        View Products <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries" class="py-20 bg-sekomaDark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="text-sekomaGreenLight font-semibold uppercase text-sm tracking-widest">Sectors</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-2">Industries We Serve</h2>
+                <p class="text-gray-400 mt-3">Tailored solutions for Zambia's growing economy</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg text-center shadow-sm">
-                    <i class="fas fa-mountain mb-3 text-2xl text-sekomaGreen"></i>
-                    [cite_start]<p class="font-bold">Mining [cite: 97]</p>
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <i class="fas fa-mountain text-4xl text-sekomaGreenLight mb-4"></i>
+                    <p class="font-bold">Mining</p>
+                    <p class="text-gray-400 text-sm mt-1">Copper &amp; industrial mining support</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg text-center shadow-sm">
-                    <i class="fas fa-road mb-3 text-2xl text-sekomaGreen"></i>
-                    [cite_start]<p class="font-bold">Construction [cite: 100]</p>
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <i class="fas fa-hard-hat text-4xl text-sekomaYellow mb-4"></i>
+                    <p class="font-bold">Construction</p>
+                    <p class="text-gray-400 text-sm mt-1">On-site fuel &amp; lubrication</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg text-center shadow-sm">
-                    <i class="fas fa-tractor mb-3 text-2xl text-sekomaGreen"></i>
-                    [cite_start]<p class="font-bold">Agriculture [cite: 110]</p>
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <i class="fas fa-tractor text-4xl text-sekomaGreenLight mb-4"></i>
+                    <p class="font-bold">Agriculture</p>
+                    <p class="text-gray-400 text-sm mt-1">Farm machinery &amp; equipment</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg text-center shadow-sm">
-                    <i class="fas fa-truck mb-3 text-2xl text-sekomaGreen"></i>
-                    [cite_start]<p class="font-bold">Transport [cite: 104]</p>
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <i class="fas fa-truck text-4xl text-sekomaYellow mb-4"></i>
+                    <p class="font-bold">Transport</p>
+                    <p class="text-gray-400 text-sm mt-1">Fleet fuel &amp; maintenance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-sekomaDark text-white py-16">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <!-- CALL TO ACTION -->
+    <section class="py-20 bg-sekomaGreen text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Ready to Power Your Business?</h2>
+            <p class="text-green-100 mb-8 text-lg">Get in touch with our team for a custom energy solution.</p>
+            <a href="contact.html"
+                class="bg-white text-sekomaGreen px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
+                <i class="fas fa-paper-plane mr-2"></i>Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sekomaDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
-                <h3 class="text-xl font-bold mb-4 underline decoration-sekomaGreen">Get In Touch</h3>
-                [cite_start]<p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-sekomaGreen"></i> Plot 7330, Mukatasha Road, Lusaka [cite: 127]</p>
-                [cite_start]<p class="mb-2"><i class="fas fa-phone mr-2 text-sekomaGreen"></i> +260 966 505070 [cite: 129]</p>
-                [cite_start]<p class="mb-2"><i class="fas fa-envelope mr-2 text-sekomaGreen"></i> sales@sekomaenergy.com [cite: 130]</p>
+                <div class="mb-4">
+                    <img src="logo-transparent.png" alt="Sekoma Energy Limited" class="h-10 w-auto">
+                </div>
+                <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
+                <div class="flex gap-4 mt-5">
+                    <a href="#" aria-label="Facebook"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
             </div>
             <div>
-                <h3 class="text-xl font-bold mb-4 underline decoration-sekomaGreen">Our Philosophy</h3>
-                <ul class="text-gray-400 space-y-1">
-                    [cite_start]<li>Integrity & Credibility [cite: 42]</li>
-                    [cite_start]<li>Agility & Innovation [cite: 42]</li>
-                    [cite_start]<li>Excellence & Efficiency [cite: 42]</li>
+                <h3 class="text-lg font-bold mb-5 text-white">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="#about" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
+                    <li><a href="#services" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                    <li><a href="products.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Products</a></li>
+                    <li><a href="contact.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="text-xl font-bold mb-4 underline decoration-sekomaGreen">Policies</h3>
-                [cite_start]<p class="text-sm text-gray-400">Committed to our Green Agenda, Health & Safety, and Social Responsibility[cite: 78, 79, 85].</p>
-                <div class="mt-6 flex space-x-4">
-                    <a href="#" class="text-2xl hover:text-sekomaGreen"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-2xl hover:text-sekomaGreen"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h3 class="text-lg font-bold mb-5 text-white">Get In Touch</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1"></i>
+                        <span>Plot 7330, Mukatasha Road, Lusaka, Zambia</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone text-sekomaGreenLight"></i>
+                        <a href="tel:+260966505070" class="hover:text-white transition">+260 966 505070</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-sekomaGreenLight"></i>
+                        <a href="mailto:sales@sekomaenergy.com"
+                            class="hover:text-white transition">sales@sekomaenergy.com</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="text-center mt-12 pt-8 border-t border-gray-800 text-gray-500 text-sm">
-            &copy; 2026 Sekoma Energy Limited. [cite_start]Registered in Zambia[cite: 8].
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2026 Sekoma Energy Limited. Registered in Zambia. All Rights Reserved.
         </div>
     </footer>
 
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars' : 'fas fa-times';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.className = 'fas fa-bars';
+        }
+    </script>
 </body>
+
 </html>

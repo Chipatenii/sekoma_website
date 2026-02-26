@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Sekoma Energy Limited</title>
+    <meta name="description"
+        content="Explore Sekoma Energy's full product portfolio — lubricants, white fuel products, generators, and value-added industrial services in Zambia.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sekomaGreen: '#2e7d32',
+                        sekomaGreenLight: '#4CAF50',
+                        sekomaYellow: '#F9A825',
+                        sekomaDark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Sekoma Energy Limited" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold">
+                <a href="index.html#about" class="hover:text-sekomaGreen transition">About</a>
+                <a href="index.html#services" class="hover:text-sekomaGreen transition">Services</a>
+                <a href="products.html" class="text-sekomaGreen border-b-2 border-sekomaGreen pb-1">Products</a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Contact Us</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-gray-700 text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 pb-4 flex flex-col space-y-3 font-semibold">
+            <a href="index.html#about" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">About</a>
+            <a href="index.html#services" class="hover:text-sekomaGreen transition py-2"
+                onclick="closeMobileMenu()">Services</a>
+            <a href="products.html" class="text-sekomaGreen py-2">Products</a>
+            <a href="contact.html"
+                class="bg-sekomaGreen text-white px-5 py-2 rounded-lg text-center hover:bg-green-700 transition"
+                onclick="closeMobileMenu()">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="bg-sekomaDark text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <span
+                class="inline-block bg-sekomaGreen text-white text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">
+                <i class="fas fa-box-open mr-1"></i> Product Portfolio
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Industrial Energy &amp; Lubricant Solutions</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">Everything your operation needs — from lubricants and
+                fuel to backup power and specialist services.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCT CARDS -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Lubricants -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-oil-can text-2xl text-sekomaGreen"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4">Lubricant Range</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaGreen mt-1 flex-shrink-0"></i>
+                            <span>Supply of high-quality greases</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaGreen mt-1 flex-shrink-0"></i>
+                            <span>Industrial oils &amp; lubricants</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaGreen mt-1 flex-shrink-0"></i>
+                            <span>Penetrating and dry lubricants</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaGreen mt-1 flex-shrink-0"></i>
+                            <span>Oil-spill clean-up products</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- White Products -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaYellow card-hover">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-gas-pump text-2xl text-sekomaYellow"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4">White Products</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaYellow mt-1 flex-shrink-0"></i>
+                            <span>Diesel — sourced from refineries</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaYellow mt-1 flex-shrink-0"></i>
+                            <span>Petrol (unleaded)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaYellow mt-1 flex-shrink-0"></i>
+                            <span>Heavy Fuel Oil (HFO)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-sekomaYellow mt-1 flex-shrink-0"></i>
+                            <span>Bulk delivery logistics</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Power Backup -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
+                        <i class="fas fa-plug text-2xl text-sekomaGreen"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4">Power Back-Up Solutions</h2>
+                    <p class="text-gray-600 mb-5">Sourcing world-class generators for home and industrial use — backed
+                        by installation and maintenance support.</p>
+                    <div class="flex gap-6">
+                        <div class="flex flex-col items-center bg-gray-50 rounded-xl p-4 flex-1">
+                            <i class="fas fa-industry text-4xl text-gray-400 mb-3"></i>
+                            <span class="font-bold text-gray-800">Perkins</span>
+                            <span class="text-xs text-gray-500 mt-1">Industrial &amp; standby</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-gray-50 rounded-xl p-4 flex-1">
+                            <i class="fas fa-bolt text-4xl text-gray-400 mb-3"></i>
+                            <span class="font-bold text-gray-800">Cummins</span>
+                            <span class="text-xs text-gray-500 mt-1">Commercial &amp; residential</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE-ADDED SERVICES TABLE -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-sekomaGreenLight font-semibold uppercase text-sm tracking-widest">Beyond
+                    Products</span>
+                <h2 class="text-3xl font-extrabold mt-2">Value-Added Services</h2>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border shadow-sm">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-sekomaDark text-white">
+                            <th class="py-4 px-6 text-left font-semibold">
+                                <i class="fas fa-cog mr-2 text-sekomaGreenLight"></i>Service
+                            </th>
+                            <th class="py-4 px-6 text-left font-semibold">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-semibold flex items-center gap-3">
+                                <i class="fas fa-flask text-sekomaGreen"></i> Lubricant Analysis
+                            </td>
+                            <td class="py-4 px-6 text-gray-600">Benchmarking and usage advice for correct lubricant
+                                application to extend equipment life.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-semibold">
+                                <i class="fas fa-tools text-sekomaGreen mr-3"></i> Equipment Maintenance
+                            </td>
+                            <td class="py-4 px-6 text-gray-600">Industrial equipment and engine maintenance and
+                                servicing by qualified technicians.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-semibold">
+                                <i class="fas fa-robot text-sekomaGreen mr-3"></i> Automated Greasing Tech
+                            </td>
+                            <td class="py-4 px-6 text-gray-600">Automated greasing technology and specialized equipment
+                                to reduce downtime and labour costs.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-semibold">
+                                <i class="fas fa-leaf text-sekomaGreen mr-3"></i> Environmental Services
+                            </td>
+                            <td class="py-4 px-6 text-gray-600">Oil-spill clean-up and environmentally responsible
+                                disposal of hazardous waste.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-sekomaGreen text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Need a custom solution for your operation?</h2>
+            <p class="text-green-100 mb-8">Our team is ready to tailor an energy package to your specific requirements.
+            </p>
+            <a href="contact.html"
+                class="bg-white text-sekomaGreen px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
+                <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sekomaDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="mb-4">
+                    <img src="logo-transparent.png" alt="Sekoma Energy Limited" class="h-10 w-auto">
+                </div>
+                <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
+                <div class="flex gap-4 mt-5">
+                    <a href="#" aria-label="Facebook"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-5 text-white">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="index.html#about" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
+                    <li><a href="index.html#services" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                    <li><a href="products.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Products</a></li>
+                    <li><a href="contact.html" class="hover:text-sekomaGreenLight transition"><i
+                                class="fas fa-chevron-right text-xs mr-2"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-5 text-white">Get In Touch</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1"></i>
+                        <span>Plot 7330, Mukatasha Road, Lusaka, Zambia</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone text-sekomaGreenLight"></i>
+                        <a href="tel:+260966505070" class="hover:text-white transition">+260 966 505070</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-sekomaGreenLight"></i>
+                        <a href="mailto:sales@sekomaenergy.com"
+                            class="hover:text-white transition">sales@sekomaenergy.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+            &copy; 2026 Sekoma Energy Limited. Registered in Zambia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars' : 'fas fa-times';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.className = 'fas fa-bars';
+        }
+    </script>
+</body>
+
+</html>
