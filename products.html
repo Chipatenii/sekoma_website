@@ -40,6 +40,36 @@
         html {
             scroll-behavior: smooth;
         }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #mobileMenu {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobileMenu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        #floatingCall {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            #floatingCall {
+                display: flex;
+            }
+        }
+
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
     </style>
 </head>
 
@@ -47,9 +77,9 @@
 
     <!-- NAVIGATION -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center">
-                <img src="logo.png" alt="Sekoma Energy Limited" class="h-12 w-auto">
+                <img src="logo.png" alt="Sekoma Energy Limited" class="h-10 sm:h-12 w-auto">
             </a>
             <div class="hidden md:flex items-center space-x-8 font-semibold">
                 <a href="index.html#about" class="hover:text-sekomaGreen transition">About</a>
@@ -58,42 +88,58 @@
                 <a href="contact.html"
                     class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Contact Us</a>
             </div>
-            <button id="menuBtn" class="md:hidden text-gray-700 text-2xl focus:outline-none" aria-label="Toggle menu">
+            <button id="menuBtn"
+                class="md:hidden flex items-center justify-center w-11 h-11 text-gray-700 text-2xl focus:outline-none rounded-lg hover:bg-gray-100 transition"
+                aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars" id="menuIcon"></i>
             </button>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 pb-4 flex flex-col space-y-3 font-semibold">
-            <a href="index.html#about" class="hover:text-sekomaGreen transition py-2"
-                onclick="closeMobileMenu()">About</a>
-            <a href="index.html#services" class="hover:text-sekomaGreen transition py-2"
-                onclick="closeMobileMenu()">Services</a>
-            <a href="products.html" class="text-sekomaGreen py-2">Products</a>
-            <a href="contact.html"
-                class="bg-sekomaGreen text-white px-5 py-2 rounded-lg text-center hover:bg-green-700 transition"
-                onclick="closeMobileMenu()">Contact Us</a>
+        <div id="mobileMenu" class="md:hidden bg-white border-t">
+            <div class="px-4 pb-4 pt-2 flex flex-col space-y-1 font-semibold">
+                <a href="index.html#about"
+                    class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-info-circle text-sekomaGreenLight w-5"></i>About
+                </a>
+                <a href="index.html#services"
+                    class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-cogs text-sekomaGreenLight w-5"></i>Services
+                </a>
+                <a href="products.html"
+                    class="text-sekomaGreen py-3 px-3 rounded-lg bg-green-50 flex items-center gap-3">
+                    <i class="fas fa-box-open text-sekomaGreen w-5"></i>Products
+                </a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-4 py-3 rounded-lg text-center hover:bg-green-700 transition mt-2"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-envelope mr-2"></i>Contact Us
+                </a>
+            </div>
         </div>
     </nav>
 
     <!-- PAGE HEADER -->
-    <section class="bg-sekomaDark text-white py-16">
-        <div class="container mx-auto px-6 text-center">
+    <section class="bg-sekomaDark text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
             <span
-                class="inline-block bg-sekomaGreen text-white text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">
+                class="inline-block bg-sekomaGreen text-white text-xs sm:text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">
                 <i class="fas fa-box-open mr-1"></i> Product Portfolio
             </span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Industrial Energy &amp; Lubricant Solutions</h1>
-            <p class="text-gray-300 max-w-2xl mx-auto text-lg">Everything your operation needs — from lubricants and
-                fuel to backup power and specialist services.</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Industrial Energy &amp; Lubricant
+                Solutions</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">Everything your operation needs — from
+                lubricants and fuel to backup power and specialist services.</p>
         </div>
     </section>
 
     <!-- PRODUCT CARDS -->
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <section class="py-14 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
                 <!-- Lubricants -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover">
                     <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
                         <i class="fas fa-oil-can text-2xl text-sekomaGreen"></i>
                     </div>
@@ -119,7 +165,7 @@
                 </div>
 
                 <!-- White Products -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaYellow card-hover">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border-t-4 border-sekomaYellow card-hover">
                     <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-5">
                         <i class="fas fa-gas-pump text-2xl text-sekomaYellow"></i>
                     </div>
@@ -145,23 +191,24 @@
                 </div>
 
                 <!-- Power Backup -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover">
+                <div
+                    class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border-t-4 border-sekomaGreen card-hover sm:col-span-2 lg:col-span-1">
                     <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-5">
                         <i class="fas fa-plug text-2xl text-sekomaGreen"></i>
                     </div>
                     <h2 class="text-xl font-bold mb-4">Power Back-Up Solutions</h2>
                     <p class="text-gray-600 mb-5">Sourcing world-class generators for home and industrial use — backed
                         by installation and maintenance support.</p>
-                    <div class="flex gap-6">
+                    <div class="flex gap-4 sm:gap-6">
                         <div class="flex flex-col items-center bg-gray-50 rounded-xl p-4 flex-1">
                             <i class="fas fa-industry text-4xl text-gray-400 mb-3"></i>
                             <span class="font-bold text-gray-800">Perkins</span>
-                            <span class="text-xs text-gray-500 mt-1">Industrial &amp; standby</span>
+                            <span class="text-xs text-gray-500 mt-1 text-center">Industrial &amp; standby</span>
                         </div>
                         <div class="flex flex-col items-center bg-gray-50 rounded-xl p-4 flex-1">
                             <i class="fas fa-bolt text-4xl text-gray-400 mb-3"></i>
                             <span class="font-bold text-gray-800">Cummins</span>
-                            <span class="text-xs text-gray-500 mt-1">Commercial &amp; residential</span>
+                            <span class="text-xs text-gray-500 mt-1 text-center">Commercial &amp; residential</span>
                         </div>
                     </div>
                 </div>
@@ -170,15 +217,53 @@
         </div>
     </section>
 
-    <!-- VALUE-ADDED SERVICES TABLE -->
-    <section class="bg-white py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
+    <!-- VALUE-ADDED SERVICES — Card layout on mobile, table on md+ -->
+    <section class="bg-white py-14 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
                 <span class="text-sekomaGreenLight font-semibold uppercase text-sm tracking-widest">Beyond
                     Products</span>
-                <h2 class="text-3xl font-extrabold mt-2">Value-Added Services</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Value-Added Services</h2>
             </div>
-            <div class="overflow-x-auto rounded-2xl border shadow-sm">
+
+            <!-- Mobile: card grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+                <div class="border rounded-2xl p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-flask text-sekomaGreen text-xl"></i>
+                        <h3 class="font-bold text-gray-800">Lubricant Analysis</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Benchmarking and usage advice for correct lubricant application to
+                        extend equipment life.</p>
+                </div>
+                <div class="border rounded-2xl p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-tools text-sekomaGreen text-xl"></i>
+                        <h3 class="font-bold text-gray-800">Equipment Maintenance</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Industrial equipment and engine maintenance and servicing by
+                        qualified technicians.</p>
+                </div>
+                <div class="border rounded-2xl p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-robot text-sekomaGreen text-xl"></i>
+                        <h3 class="font-bold text-gray-800">Automated Greasing Tech</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Automated greasing technology and specialized equipment to reduce
+                        downtime and labour costs.</p>
+                </div>
+                <div class="border rounded-2xl p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-leaf text-sekomaGreen text-xl"></i>
+                        <h3 class="font-bold text-gray-800">Environmental Services</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">Oil-spill clean-up and environmentally responsible disposal of
+                        hazardous waste.</p>
+                </div>
+            </div>
+
+            <!-- Desktop: table (hidden on mobile) -->
+            <div class="hidden md:block overflow-x-auto rounded-2xl border shadow-sm">
                 <table class="min-w-full bg-white">
                     <thead>
                         <tr class="bg-sekomaDark text-white">
@@ -224,21 +309,22 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-16 bg-sekomaGreen text-white text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Need a custom solution for your operation?</h2>
+    <section class="py-14 sm:py-16 bg-sekomaGreen text-white text-center">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">Need a custom solution for your operation?</h2>
             <p class="text-green-100 mb-8">Our team is ready to tailor an energy package to your specific requirements.
             </p>
             <a href="contact.html"
-                class="bg-white text-sekomaGreen px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition inline-block">
+                class="bg-white text-sekomaGreen px-8 sm:px-10 py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-100 transition inline-flex items-center justify-center min-h-[52px]">
                 <i class="fas fa-paper-plane mr-2"></i>Get In Touch
             </a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-sekomaDark text-white pt-16 pb-8">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer class="bg-sekomaDark text-white pt-10 sm:pt-16 pb-8 safe-bottom">
+        <div
+            class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-10 sm:mb-12">
             <div>
                 <div class="mb-4">
                     <img src="logo-transparent.png" alt="Sekoma Energy Limited" class="h-10 w-auto">
@@ -246,51 +332,63 @@
                 <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
                 <div class="flex gap-4 mt-5">
                     <a href="#" aria-label="Facebook"
-                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#" aria-label="LinkedIn"
-                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-5 text-white">Quick Links</h3>
+                <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
                 <ul class="space-y-3 text-gray-400">
-                    <li><a href="index.html#about" class="hover:text-sekomaGreenLight transition"><i
-                                class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
-                    <li><a href="index.html#services" class="hover:text-sekomaGreenLight transition"><i
-                                class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
-                    <li><a href="products.html" class="hover:text-sekomaGreenLight transition"><i
-                                class="fas fa-chevron-right text-xs mr-2"></i>Products</a></li>
-                    <li><a href="contact.html" class="hover:text-sekomaGreenLight transition"><i
-                                class="fas fa-chevron-right text-xs mr-2"></i>Contact Us</a></li>
+                    <li><a href="index.html#about"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>About Us</a></li>
+                    <li><a href="index.html#services"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Services</a></li>
+                    <li><a href="products.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Products</a></li>
+                    <li><a href="contact.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Contact Us</a></li>
                 </ul>
             </div>
-            <div>
-                <h3 class="text-lg font-bold mb-5 text-white">Get In Touch</h3>
+            <div class="sm:col-span-2 md:col-span-1">
+                <h3 class="text-lg font-bold mb-4 text-white">Get In Touch</h3>
                 <ul class="space-y-3 text-gray-400">
                     <li class="flex items-start gap-3">
-                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1"></i>
+                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1 flex-shrink-0"></i>
                         <span>Plot 7330, Mukatasha Road, Lusaka, Zambia</span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="fas fa-phone text-sekomaGreenLight"></i>
-                        <a href="tel:+260966505070" class="hover:text-white transition">+260 966 505070</a>
+                        <i class="fas fa-phone text-sekomaGreenLight flex-shrink-0"></i>
+                        <a href="tel:+260966505070" class="hover:text-white transition py-1">+260 966 505070</a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="fas fa-envelope text-sekomaGreenLight"></i>
+                        <i class="fas fa-envelope text-sekomaGreenLight flex-shrink-0"></i>
                         <a href="mailto:sales@sekomaenergy.com"
-                            class="hover:text-white transition">sales@sekomaenergy.com</a>
+                            class="hover:text-white transition py-1">sales@sekomaenergy.com</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm px-4">
             &copy; 2026 Sekoma Energy Limited. Registered in Zambia. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- FLOATING CALL BUTTON (mobile only) -->
+    <a href="tel:+260966505070" id="floatingCall" aria-label="Call Sekoma Energy"
+        class="fixed bottom-6 right-4 z-50 bg-sekomaGreen text-white rounded-full shadow-lg items-center justify-center gap-2 px-5 py-3 font-bold text-sm hover:bg-green-700 transition"
+        style="bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px))">
+        <i class="fas fa-phone"></i>
+        <span>Call Us</span>
+    </a>
 
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -298,14 +396,23 @@
         const menuIcon = document.getElementById('menuIcon');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fas fa-bars' : 'fas fa-times';
+            const isOpen = mobileMenu.classList.contains('open');
+            mobileMenu.classList.toggle('open', !isOpen);
+            menuIcon.className = isOpen ? 'fas fa-bars' : 'fas fa-times';
+            menuBtn.setAttribute('aria-expanded', String(!isOpen));
         });
 
         function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('open');
             menuIcon.className = 'fas fa-bars';
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
     </script>
 </body>
 
