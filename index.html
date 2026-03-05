@@ -30,7 +30,7 @@
     <style>
         .hero-gradient {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(17, 40, 12, 0.7) 100%),
-                url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80');
+                url('hero-mine.jpg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -169,11 +169,19 @@
                         Are</span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mt-2 mb-5">Built for Zambia's<br>Growing
                         Economy</h2>
-                    <p class="text-gray-600 mb-4">Sekoma Energy Limited is a Zambian energy company offering integrated
-                        petroleum and power solutions. We serve mining, construction, agriculture, and transport sectors
-                        with reliable supply chains and technical expertise.</p>
-                    <p class="text-gray-600">Headquartered in Lusaka, we bring world-class products and services to the
-                        local market — on time, every time.</p>
+                    <p class="text-gray-600 mb-4">Sekoma Energy Limited is a licensed Zambian oil marketing company
+                        offering integrated petroleum as well as power solutions. We serve mining, construction,
+                        agriculture, and transport sectors with reliable supply chains and technical expertise.</p>
+                    <p class="text-gray-600 mb-4">Headquartered in Lusaka, we bring world-class products and services to
+                        the local and regional markets — on time, every time.</p>
+                    <div class="mt-6 bg-green-50 p-6 rounded-xl border-l-4 border-sekomaGreen">
+                        <h3 class="text-lg font-bold text-sekomaGreen mb-2">Quality, Health, Safety, and Environment
+                            (QHSE) Policy</h3>
+                        <p class="text-sm text-gray-700">Sekoma Energy strives to achieve the highest standards in
+                            meeting customer requirements and expectations. We are fully committed to the principles of
+                            quality, occupational health, safety, and environmental protection through the application
+                            of integrated management systems that lead to continual improvement.</p>
+                    </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 sm:gap-6">
                     <div class="bg-green-50 p-5 sm:p-6 rounded-xl text-center">
@@ -326,6 +334,12 @@
                     <li><a href="contact.html"
                             class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
                                 class="fas fa-chevron-right text-xs"></i>Contact Us</a></li>
+                    <li><a href="privacy-policy.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Privacy Policy</a></li>
+                    <li><a href="cookies-policy.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Cookies Policy</a></li>
                 </ul>
             </div>
             <div class="sm:col-span-2 md:col-span-1">
@@ -341,8 +355,8 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fas fa-envelope text-sekomaGreenLight flex-shrink-0"></i>
-                        <a href="mailto:sales@sekomaenergy.com"
-                            class="hover:text-white transition py-1">sales@sekomaenergy.com</a>
+                        <a href="mailto:info@sekomaenergy.com"
+                            class="hover:text-white transition py-1">info@sekomaenergy.com</a>
                     </li>
                 </ul>
             </div>
@@ -354,11 +368,35 @@
 
     <!-- FLOATING CALL BUTTON (mobile only) -->
     <a href="tel:+260966505070" id="floatingCall" aria-label="Call Sekoma Energy"
-        class="fixed bottom-6 right-4 z-50 bg-sekomaGreen text-white rounded-full shadow-lg items-center justify-center gap-2 px-5 py-3 font-bold text-sm hover:bg-green-700 transition"
+        class="fixed bottom-6 right-4 z-40 bg-sekomaGreen text-white rounded-full shadow-lg items-center justify-center gap-2 px-5 py-3 font-bold text-sm hover:bg-green-700 transition"
         style="bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px))">
         <i class="fas fa-phone"></i>
         <span>Call Us</span>
     </a>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookieConsent"
+        class="fixed bottom-0 left-0 right-0 bg-sekomaDark text-white p-4 sm:p-6 z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-gray-300 text-center sm:text-left flex-1">
+                We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our
+                traffic. By clicking "Accept", you consent to our use of cookies. Read our <a href="cookies-policy.html"
+                    class="text-sekomaGreenLight hover:underline font-semibold">Cookies Policy</a> and <a
+                    href="privacy-policy.html" class="text-sekomaGreenLight hover:underline font-semibold">Privacy
+                    Policy</a> to learn more.
+            </div>
+            <div class="flex gap-3 w-full sm:w-auto">
+                <button id="acceptCookies"
+                    class="flex-1 sm:flex-none bg-sekomaGreen hover:bg-green-600 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition">
+                    Accept
+                </button>
+                <button id="declineCookies"
+                    class="flex-1 sm:flex-none border border-gray-600 hover:bg-gray-800 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -383,6 +421,37 @@
             if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 closeMobileMenu();
             }
+        });
+
+        // Cookie Banner Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+
+            // Check if user has already made a choice
+            const cookieChoice = localStorage.getItem('sekoma_cookie_consent');
+
+            if (!cookieChoice) {
+                // Show banner after a short delay
+                setTimeout(() => {
+                    cookieConsent.classList.remove('translate-y-full');
+                }, 1000);
+            }
+
+            function hideBanner() {
+                cookieConsent.classList.add('translate-y-full');
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('sekoma_cookie_consent', 'accepted');
+                hideBanner();
+            });
+
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('sekoma_cookie_consent', 'declined');
+                hideBanner();
+            });
         });
     </script>
 </body>

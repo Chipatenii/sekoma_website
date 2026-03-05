@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]);
 
     // Recipient email (Change this to Sekoma's sales email)
-    $recipient = "sales@sekomaenergy.com";
+    $recipient = "info@sekomaenergy.com";
     $subject = "New Website Inquiry from $name";
 
     // Email headers

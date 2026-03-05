@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy | Sekoma Energy Limited</title>
+    <meta name="description"
+        content="Cookies Policy for Sekoma Energy Limited explaining how we use cookies and similar technologies on our website.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sekomaGreen: '#2e7d32',
+                        sekomaGreenLight: '#4CAF50',
+                        sekomaYellow: '#F9A825',
+                        sekomaDark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-mini {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(46, 125, 50, 0.9) 100%),
+                url('hero-mine.jpg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #mobileMenu {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobileMenu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        .policy-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .policy-content p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .policy-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Sekoma Energy Limited" class="h-10 sm:h-12 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold">
+                <a href="index.html#about" class="hover:text-sekomaGreen transition">About</a>
+                <a href="index.html#services" class="hover:text-sekomaGreen transition">Services</a>
+                <a href="products.html" class="hover:text-sekomaGreen transition">Products</a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Contact Us</a>
+            </div>
+            <button id="menuBtn"
+                class="md:hidden flex items-center justify-center w-11 h-11 text-gray-700 text-2xl focus:outline-none rounded-lg hover:bg-gray-100 transition"
+                aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+        <!-- Mobile dropdown -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t">
+            <div class="px-4 pb-4 pt-2 flex flex-col space-y-1 font-semibold">
+                <a href="index.html#about"
+                    class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-info-circle text-sekomaGreenLight w-5"></i>About
+                </a>
+                <a href="index.html#services"
+                    class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-cogs text-sekomaGreenLight w-5"></i>Services
+                </a>
+                <a href="products.html"
+                    class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-box-open text-sekomaGreenLight w-5"></i>Products
+                </a>
+                <a href="contact.html"
+                    class="bg-sekomaGreen text-white px-4 py-3 rounded-lg text-center hover:bg-green-700 transition mt-2"
+                    onclick="closeMobileMenu()">
+                    <i class="fas fa-envelope mr-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MINI HERO -->
+    <header class="hero-mini py-16 sm:py-20 text-white text-center">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Cookies Policy</h1>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto">Learn how and why we use cookies to improve your
+                experience on our website.</p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow py-12 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+            <div class="bg-gray-50 rounded-2xl p-6 sm:p-10 shadow-sm border border-gray-100 policy-content">
+                <p>This Cookies Policy explains how Sekoma Energy Limited ("we," "us," or "our") uses cookies and
+                    similar technologies on our website. We are committed to protecting your privacy and ensuring
+                    transparency regarding the data we collect through cookies. By accessing or using our website, you
+                    consent to our use of cookies as described in this policy.</p>
+
+                <h2>What Are Cookies?</h2>
+                <p>Cookies are small text files that are stored on your device (computer, tablet, mobile phone) when you
+                    visit a website. They enable the website to recognize your device and store certain information
+                    about your preferences or past actions.</p>
+
+                <h2>Types of Cookies We Use</h2>
+                <ul>
+                    <li><strong>Strictly Necessary Cookies:</strong> These cookies are essential for the operation of
+                        our website. They enable core functionality such as security, network management, and
+                        accessibility. The website cannot function properly without these cookies.</li>
+                    <li><strong>Performance Cookies:</strong> These cookies collect information about how visitors use
+                        our website, such as which pages are visited most often. This data helps us improve the
+                        website's performance and user experience.</li>
+                    <li><strong>Functional Cookies:</strong> These cookies allow our website to remember choices you
+                        make (such as your language or region) and provide enhanced, more personalized features.</li>
+                    <li><strong>Targeting/Advertising Cookies:</strong> These cookies may be set through our site by our
+                        advertising partners. They may be used to build a profile of your interests and show you
+                        relevant advertisements on other sites.</li>
+                </ul>
+
+                <h2>How We Use Cookies</h2>
+                <p>We use cookies to:</p>
+                <ul>
+                    <li>Ensure the proper functioning of our website</li>
+                    <li>Enhance your browsing experience by remembering your preferences</li>
+                    <li>Analyze website traffic and usage patterns</li>
+                    <li>Provide personalized content and advertisements</li>
+                </ul>
+
+                <h2>Third-Party Cookies</h2>
+                <p>Some cookies on our website may be set by third-party service providers, such as analytics companies
+                    or advertisers. These third parties may use cookies in connection with their own services and are
+                    responsible for their own privacy practices.</p>
+
+                <h2>Managing Cookies</h2>
+                <p>You have the right to accept or refuse cookies. Most web browsers allow you to manage your cookie
+                    preferences through the browser settings. You can choose to block or delete cookies at any time.
+                    However, please note that disabling cookies may affect the functionality and features of our
+                    website.</p>
+
+                <h2>Changes to This Cookies Policy</h2>
+                <p>We may update this Cookies Policy from time to time to reflect changes in technology, legislation, or
+                    our business practices. Any changes will be posted on this page with an updated revision date.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions or concerns about our use of cookies, please contact us at: <a
+                        href="mailto:info@sekomaenergy.com"
+                        class="text-sekomaGreen font-semibold hover:underline">info@sekomaenergy.com</a>. By continuing
+                    to use our website, you agree to our use of cookies as outlined in this policy.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-sekomaDark text-white pt-10 sm:pt-16 pb-8 safe-bottom mt-auto">
+        <div
+            class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-10 sm:mb-12">
+            <div>
+                <div class="mb-4">
+                    <img src="logo-transparent.png" alt="Sekoma Energy Limited" class="h-10 w-auto">
+                </div>
+                <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
+                <div class="flex gap-4 mt-5">
+                    <a href="#" aria-label="Facebook"
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn"
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="index.html#about"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>About Us</a></li>
+                    <li><a href="index.html#services"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Services</a></li>
+                    <li><a href="products.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Products</a></li>
+                    <li><a href="contact.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Contact Us</a></li>
+                    <li><a href="privacy-policy.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Privacy Policy</a></li>
+                    <li><a href="cookies-policy.html"
+                            class="hover:text-sekomaGreenLight transition flex items-center gap-2 py-1"><i
+                                class="fas fa-chevron-right text-xs"></i>Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="sm:col-span-2 md:col-span-1">
+                <h3 class="text-lg font-bold mb-4 text-white">Get In Touch</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-sekomaGreenLight mt-1 flex-shrink-0"></i>
+                        <span>Plot 7330, Mukatasha Road, Lusaka, Zambia</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone text-sekomaGreenLight flex-shrink-0"></i>
+                        <a href="tel:+260966505070" class="hover:text-white transition py-1">+260 966 505070</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-sekomaGreenLight flex-shrink-0"></i>
+                        <a href="mailto:info@sekomaenergy.com"
+                            class="hover:text-white transition py-1">info@sekomaenergy.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm px-4">
+            &copy; 2026 Sekoma Energy Limited. Registered in Zambia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('open');
+            mobileMenu.classList.toggle('open', !isOpen);
+            menuIcon.className = isOpen ? 'fas fa-bars' : 'fas fa-times';
+            menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuIcon.className = 'fas fa-bars';
+            menuBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+
+</html>
