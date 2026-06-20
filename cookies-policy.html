@@ -8,30 +8,13 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description"
         content="Cookies Policy for Sekoma Energy Limited explaining how we use cookies and similar technologies on our website.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/tailwind.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sekomaGreen: '#2e7d32',
-                        sekomaGreenLight: '#4CAF50',
-                        sekomaYellow: '#F9A825',
-                        sekomaDark: '#111827',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         .hero-mini {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(46, 125, 50, 0.9) 100%),
-                url('hero-mine-optimized.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(17, 40, 12, 0.7) 100%),
+                url('hero-truck.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -85,6 +68,7 @@
             margin-bottom: 0.5rem;
         }
     </style>
+    <link rel="stylesheet" href="assets/site.css?v=3">
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
@@ -104,12 +88,12 @@
             </div>
             <button id="menuBtn"
                 class="md:hidden flex items-center justify-center w-11 h-11 text-gray-700 text-2xl focus:outline-none rounded-lg hover:bg-gray-100 transition"
-                aria-label="Toggle menu" aria-expanded="false">
+                aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
                 <i class="fas fa-bars" id="menuIcon"></i>
             </button>
         </div>
         <!-- Mobile dropdown -->
-        <div id="mobileMenu" class="md:hidden bg-white border-t">
+        <div id="mobileMenu" class="md:hidden bg-white border-t" aria-hidden="true" inert>
             <div class="px-4 pb-4 pt-2 flex flex-col space-y-1 font-semibold">
                 <a href="index.html#about"
                     class="hover:text-sekomaGreen transition py-3 px-3 rounded-lg hover:bg-gray-50 flex items-center gap-3"
@@ -216,14 +200,14 @@
                 </div>
                 <p class="text-gray-400 text-sm">360-Turnkey Energy Solutions for Zambia's growing economy.</p>
                 <div class="flex gap-4 mt-5">
-                    <a href="#" aria-label="Facebook"
-                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                    <span aria-label="Facebook profile coming soon" title="Facebook profile coming soon"
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-lg icon-disabled">
                         <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" aria-label="LinkedIn"
-                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sekomaGreen transition text-lg">
+                    </span>
+                    <span aria-label="LinkedIn profile coming soon" title="LinkedIn profile coming soon"
+                        class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-lg icon-disabled">
                         <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </span>
                 </div>
             </div>
             <div>
@@ -276,31 +260,7 @@
         </div>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-
-        menuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('open');
-            mobileMenu.classList.toggle('open', !isOpen);
-            menuIcon.className = isOpen ? 'fas fa-bars' : 'fas fa-times';
-            menuBtn.setAttribute('aria-expanded', String(!isOpen));
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-            menuIcon.className = 'fas fa-bars';
-            menuBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                closeMobileMenu();
-            }
-        });
-    </script>
-    <script src="main.js"></script>
+    <script src="main.js?v=3"></script>
 </body>
 
 </html>
